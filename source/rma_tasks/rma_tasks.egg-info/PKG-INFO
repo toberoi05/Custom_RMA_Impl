@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: rma_tasks
+Version: 0.2.1
+Summary: Extension containing configuration instances of different mdp objects
+Home-page: https://github.com/isaac-sim/IsaacLab
+Author: Autonomous Mobile Robotics Lab Project Developers
+Maintainer: Autonomous Mobile Robotics Lab Project Developers
+Keywords: kit,robotics,assets,isaaclab
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Isaac Sim :: 4.5.0
+Requires-Python: >=3.10
+Dynamic: author
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: maintainer
+Dynamic: requires-python
+Dynamic: summary

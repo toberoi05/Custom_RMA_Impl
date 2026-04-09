@@ -1,0 +1,8 @@
+pyproject.toml
+setup.py
+rma_assets/__init__.py
+rma_assets.egg-info/PKG-INFO
+rma_assets.egg-info/SOURCES.txt
+rma_assets.egg-info/dependency_links.txt
+rma_assets.egg-info/not-zip-safe
+rma_assets.egg-info/top_level.txt

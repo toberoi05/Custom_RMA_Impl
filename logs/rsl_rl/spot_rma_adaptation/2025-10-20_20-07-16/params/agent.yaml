@@ -1,0 +1,65 @@
+seed: 42
+device: cuda:0
+num_steps_per_env: 24
+max_iterations: 20000
+empirical_normalization: false
+obs_groups: {}
+clip_actions: null
+save_interval: 500
+experiment_name: spot_rma_adaptation
+run_name: ''
+logger: wandb
+neptune_project: isaaclab
+wandb_project: rma-training
+resume: false
+load_run: .*
+load_checkpoint: model_.*.pt
+class_name: DistillationRunner
+policy:
+  class_name: AdaptationModule
+  init_noise_std: 1.0
+  noise_std_type: scalar
+  student_obs_normalization: {}
+  teacher_obs_normalization: {}
+  student_hidden_dims: {}
+  teacher_hidden_dims: {}
+  activation: elu
+  encoder_hidden_dims:
+  - 256
+  - 128
+  prev_step_size: 48
+  history_len: 40
+  z_size: 8
+algorithm:
+  class_name: Distillation
+  num_learning_epochs: 5
+  num_mini_batches: {}
+  learning_rate: 0.001
+  schedule: {}
+  gamma: {}
+  lam: {}
+  entropy_coef: {}
+  desired_kl: {}
+  max_grad_norm: 1.0
+  value_loss_coef: {}
+  use_clipped_value_loss: {}
+  clip_param: {}
+  normalize_advantage_per_mini_batch: false
+  rnd_cfg: null
+  symmetry_cfg: null
+store_code_state: false
+student_teacher:
+  class_name: StudentTeacher
+  init_noise_std: 1.0
+  noise_std_type: scalar
+  student_obs_normalization: true
+  teacher_obs_normalization: true
+  student_hidden_dims:
+  - 256
+  - 256
+  - 256
+  teacher_hidden_dims:
+  - 512
+  - 256
+  - 128
+  activation: elu
